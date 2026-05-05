@@ -1,0 +1,17 @@
+{
+  "name": "lula-ecommerce",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @lula/api\" \"npm run dev -w @lula/web\"",
+    "db:migrate": "npm run db:migrate -w @lula/api",
+    "db:seed": "npm run db:seed -w @lula/api",
+    "db:generate": "npm run db:generate -w @lula/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

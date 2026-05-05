@@ -1,0 +1,220 @@
+.hero {
+  background: var(--color-surface);
+  padding: 3rem 1.25rem 4rem;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.heroText {
+  max-width: 520px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #dbeafe;
+  color: var(--color-accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.heroFrame {
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, #0c4a6e, #0f2a47);
+  box-shadow: var(--shadow-card);
+}
+
+.section {
+  padding: 3rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHead {
+  margin-bottom: 2rem;
+}
+
+.sectionHead h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.sectionHead p {
+  font-size: 0.95rem;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.wizard {
+  padding: 2rem 1.25rem 3rem;
+}
+
+.wizardInner {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #e8ecf1;
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.wizardInner h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.wizardInner > p {
+  margin-bottom: 1.5rem;
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.roomCard {
+  background: var(--color-surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.roomSelected {
+  border-color: var(--color-primary);
+}
+
+.roomIcon {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.roomLabel {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.roomRange {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.wizardLink {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.tech {
+  background: var(--color-primary);
+  color: #e2e8f0;
+  padding: 3rem 1.25rem;
+}
+
+.techInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.techCard {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.techCard h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0.35rem 0;
+}
+
+.techCard p {
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+.techIcon {
+  color: #93c5fd;
+}
+
+.techCopy h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.techCopy ul {
+  margin: 0 0 1.25rem 1rem;
+  padding: 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  list-style: disc;
+}
+
+@media (max-width: 900px) {
+  .heroInner,
+  .techInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    order: -1;
+  }
+}

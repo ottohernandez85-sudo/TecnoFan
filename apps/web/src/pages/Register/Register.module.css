@@ -1,0 +1,31 @@
+.wrap {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+.wrap h1 {
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.footer {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.footer a {
+  color: var(--color-accent);
+  font-weight: 600;
+}

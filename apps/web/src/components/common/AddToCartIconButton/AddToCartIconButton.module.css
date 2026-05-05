@@ -1,0 +1,38 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s, filter 0.15s;
+  padding: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+
+.root:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.root:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.root:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.ico {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}

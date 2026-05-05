@@ -1,0 +1,254 @@
+.title {
+  margin-bottom: 0.35rem;
+}
+
+.lead {
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+}
+
+.msg {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.row > :first-child {
+  flex: 1;
+  min-width: 200px;
+}
+
+.brandLogoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .brandLogoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brandLogoPanel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: #fafbfc;
+}
+
+.brandLogoTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.logoPreviewSlot {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.65rem 0 0.35rem;
+  padding: 0.65rem;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.logoPreviewImg {
+  max-height: 56px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.logoPreviewEmpty {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.webpNote {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+}
+
+.footerLogoActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fieldLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.colorRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.colorRow code {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+.card .hint {
+  margin-bottom: 0.75rem;
+}
+
+.menuHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.menuHead h2 {
+  margin: 0;
+}
+
+.menuHeadBtns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menuItem {
+  display: grid;
+  grid-template-columns: minmax(120px, 150px) minmax(140px, 1fr) minmax(160px, 1fr) auto;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.menuBtns {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .menuItem {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroSlots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .heroSlots {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroSlot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+}
+
+.heroSlotLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.heroThumb {
+  aspect-ratio: 1;
+  max-height: 140px;
+  border-radius: var(--radius-sm);
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroEmpty {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}

@@ -1,0 +1,41 @@
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.lead {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: inherit;
+}
+
+.card:hover {
+  box-shadow: 0 12px 32px rgba(15, 42, 71, 0.12);
+}
+
+.num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
