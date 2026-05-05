@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+/** En Vercel, `VERCEL_GIT_COMMIT_SHA` permite ver en consola si cargas el último deploy. */
+const webCommit = process.env.VERCEL_GIT_COMMIT_SHA || 'local';
+
 export default defineConfig({
+  define: {
+    __WEB_COMMIT__: JSON.stringify(webCommit),
+  },
   plugins: [react()],
   server: {
     port: 5173,

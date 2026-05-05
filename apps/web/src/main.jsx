@@ -12,6 +12,11 @@ import './styles/variables.css';
 import './styles/typography.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
+if (import.meta.env.PROD) {
+  // eslint-disable-next-line no-undef
+  console.info('[TecnoFan web] build', __WEB_COMMIT__);
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
