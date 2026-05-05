@@ -76,6 +76,8 @@ Este código puede publicarse en ese remoto. Ramas útiles:
 
 Tras `git push`, Vercel y Render redeployan si tienes **auto deploy** activado en esa rama. La base de datos en Supabase no se actualiza sola: las migraciones las ejecuta el build de Render o `npm run db:deploy` en local contra la URI de Supabase.
 
+**Push con PAT sin subir el token:** copia `.github-push.env.example` a `.github-push.env`, pega tu `GITHUB_TOKEN` solo en `.github-push.env` (nunca en el `.example`) y ejecuta `./scripts/push-tecnofan.sh`.
+
 ## Despliegue (Supabase + Render + Vercel)
 
 Orden recomendado: **Supabase → Render (API) → Vercel (web)**.

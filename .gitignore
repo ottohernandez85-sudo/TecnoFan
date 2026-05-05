@@ -3,6 +3,8 @@ dist
 build
 .env
 .env.local
+# Token local para git push (no subir)
+.github-push.env
 *.log
 .DS_Store
 coverage
