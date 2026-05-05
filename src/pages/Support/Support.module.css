@@ -1,0 +1,17 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.page h1 {
+  margin-bottom: 0.75rem;
+}
+
+.list {
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: var(--color-muted);
+  line-height: 1.8;
+}

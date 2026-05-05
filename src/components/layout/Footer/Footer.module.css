@@ -1,0 +1,113 @@
+.footer {
+  background: var(--color-primary);
+  color: #e8eef5;
+  padding: 3rem 1.25rem 1.5rem;
+  margin-top: auto;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 2rem;
+}
+
+.brandRow {
+  margin-bottom: 0.75rem;
+}
+
+.logoFoot {
+  display: inline-block;
+  line-height: 0;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.logo {
+  max-height: 44px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.blurb {
+  color: #b8c5d6;
+  font-size: 0.9rem;
+  max-width: 280px;
+}
+
+.colTitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: #e2e8f0;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.newsHint {
+  font-size: 0.85rem;
+  color: #b8c5d6;
+  margin-bottom: 0.75rem;
+}
+
+.newsForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsInput {
+  flex: 1;
+  border-radius: 999px;
+  border: none;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+}
+
+.newsBtn {
+  width: 44px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
