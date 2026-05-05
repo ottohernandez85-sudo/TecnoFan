@@ -1,8 +1,9 @@
 import { staffApi } from './client.js';
+import { asArray } from '../utils/apiNormalize.js';
 
 export async function fetchCustomers() {
   const { data } = await staffApi.get('/customers');
-  return data;
+  return asArray(data);
 }
 
 export async function createCustomer(body) {

@@ -1,8 +1,9 @@
 import { staffApi } from './client.js';
+import { asArray } from '../utils/apiNormalize.js';
 
 export async function fetchUsers() {
   const { data } = await staffApi.get('/users');
-  return data;
+  return asArray(data);
 }
 
 export async function updateUserRole(id, role) {
