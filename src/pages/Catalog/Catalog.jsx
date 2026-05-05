@@ -26,14 +26,18 @@ export default function Catalog() {
   }, [categories, categorySlug]);
 
   useEffect(() => {
-    fetchCategories().then(setCategories).catch(() => setCategories([]));
+    fetchCategories()
+      .then((d) => setCategories(Array.isArray(d) ? d : []))
+      .catch(() => setCategories([]));
   }, []);
 
   useEffect(() => {
     const params = {};
     if (categoryId) params.categoryId = categoryId;
     if (search.trim()) params.search = search.trim();
-    fetchProducts(params).then(setProducts).catch(() => setProducts([]));
+    fetchProducts(params)
+      .then((d) => setProducts(Array.isArray(d) ? d : []))
+      .catch(() => setProducts([]));
   }, [categoryId, search]);
 
   const activeCategory = useMemo(

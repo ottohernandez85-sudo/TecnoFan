@@ -19,7 +19,9 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetchCategories().then(setCategories).catch(() => setCategories([]));
+    fetchCategories()
+      .then((d) => setCategories(Array.isArray(d) ? d : []))
+      .catch(() => setCategories([]));
   }, []);
 
   const heroBadge = settings?.heroBadge ?? 'Nueva colección 2024';
