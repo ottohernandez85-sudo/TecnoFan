@@ -5,6 +5,8 @@ build
 .env.local
 # Token local para git push (no subir)
 .github-push.env
+# Valores de despliegue (Supabase / Render / Vercel) — no subir
+.env.deploy.local
 *.log
 .DS_Store
 coverage

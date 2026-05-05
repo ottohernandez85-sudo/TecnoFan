@@ -82,6 +82,8 @@ Tras `git push`, Vercel y Render redeployan si tienes **auto deploy** activado e
 
 Orden recomendado: **Supabase → Render (API) → Vercel (web)**.
 
+**Valores entre cuentas (local, sin subir a Git):** copia [`.env.deploy.local.example`](.env.deploy.local.example) a `.env.deploy.local` y úsalo como bloc de notas; `.env.deploy.local` está en `.gitignore` y recoge qué sacar de Supabase, Render y Vercel y dónde pegarlo en cada panel.
+
 ### Supabase (PostgreSQL)
 
 1. Crea un proyecto en [Supabase](https://supabase.com/dashboard).
