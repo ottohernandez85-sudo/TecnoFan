@@ -127,6 +127,8 @@ Orden recomendado: **Supabase → Render (API) → Vercel (web)**.
 
    Si en Render tienes `NODE_ENV=production`, `npm install` **no** instala `devDependencies`; el paquete **`prisma`** debe estar en `dependencies` del API para que `npm run db:deploy` funcione en el build (ya está así en este repo).
 
+   Si el panel de Render quedó con el typo `npm run db:deployyarn` (sin espacio entre `deploy` y `yarn`), el repo incluye el script **`db:deployyarn`** como alias de `db:deploy` para que el build no falle hasta que corrijas el comando en el dashboard.
+
 6. Tras el deploy, comprueba `https://<tu-servicio>.onrender.com/api/health`.
 
 **Free tier:** el servicio puede “dormirse”; la primera petición tras inactividad tarda más (cold start).
