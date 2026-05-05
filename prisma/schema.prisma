@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  STAFF
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(STAFF)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  phone     String?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String    @default("")
+  imageUrl    String?
+  /// Identificador de icono (misma convención que el menú: fan, wind, package, etc.)
+  icon        String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          Int         @id @default(autoincrement())
+  name        String
+  slug        String      @unique
+  description String
+  price       Decimal     @db.Decimal(12, 2)
+  stock       Int         @default(0)
+  imageUrl    String?
+  badge       String?
+  attributes  Json?
+  categoryId  Int
+  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Order {
+  id              Int         @id @default(autoincrement())
+  customerId      Int
+  customer        Customer    @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  total           Decimal     @db.Decimal(12, 2)
+  status          String      @default("PENDING")
+  deliveryName    String
+  deliveryPhone   String
+  deliveryAddress String
+  deliveryCity    String
+  deliveryNit     String?
+  paymentMethod   String
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  unitPrice Decimal @db.Decimal(12, 2)
+}
+
+model SiteSetting {
+  id                 Int      @id @default(1)
+  brandName          String   @default("Tecnofan")
+  logoUrl            String?
+  /// Logo solo para el pie de página (independiente del navbar).
+  footerLogoUrl      String?
+  colorPrimary       String   @default("#0F2A47")
+  colorAccent        String   @default("#1E5BA8")
+  colorBg            String   @default("#F2F4F7")
+  colorSurface       String   @default("#FFFFFF")
+  colorText          String   @default("#0F2A47")
+  menuItems          Json     @default("[]")
+  productTemplate    String   @default("standard")
+  companyLegalName   String?  @default("Tecnofan Guatemala S.A.")
+  companyAddress     String?  @default("Zona 10, Ciudad de Guatemala")
+  companyPhone       String?  @default("+502 3000-0000")
+  companyEmail       String?  @default("ventas@tecnofan.demo")
+  companyTaxId       String?  @default("NIT 1234567-8")
+  heroBadge          String   @default("Nueva colección 2024")
+  heroTitle          String   @default("Equilibrio ideal: entre aire y diseño")
+  heroSubtitle       String   @default("Tonos claros, velocidades suaves y silencio de ingeniería para tu espacio.")
+  heroSlides         Json     @default("[]")
+  updatedAt          DateTime @updatedAt
+}
