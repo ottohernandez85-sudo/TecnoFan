@@ -43,7 +43,11 @@ export function ThemeProvider({ children }) {
       const heroSlides = Array.isArray(s.heroSlides)
         ? [...s.heroSlides, null, null, null].slice(0, 3).map((x) => (typeof x === 'string' && x.trim() ? x.trim() : null))
         : [null, null, null];
-      const merged = { ...s, menuItems, heroSlides };
+      const merged = {
+        ...s,
+        menuItems: Array.isArray(menuItems) ? menuItems : DEFAULT_MENU,
+        heroSlides,
+      };
       setSettings(merged);
       applyCssVars(merged);
     } catch (e) {
@@ -89,7 +93,11 @@ export function ThemeProvider({ children }) {
             .slice(0, 3)
             .map((x) => (typeof x === 'string' && x.trim() ? x.trim() : null))
         : [null, null, null];
-      const merged = { ...updated, menuItems, heroSlides };
+      const merged = {
+        ...updated,
+        menuItems: Array.isArray(menuItems) ? menuItems : DEFAULT_MENU,
+        heroSlides,
+      };
       setSettings(merged);
       applyCssVars(merged);
       return merged;

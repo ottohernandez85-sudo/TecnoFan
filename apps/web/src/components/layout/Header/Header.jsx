@@ -55,7 +55,7 @@ export default function Header() {
   const { count } = useCart();
   const { favorites, toggleSidebar } = useFavorites();
   const brand = settings?.brandName || 'Tecnofan';
-  const menu = settings?.menuItems || [];
+  const menu = Array.isArray(settings?.menuItems) ? settings.menuItems : [];
   const canPanel = staff && (staff.role === 'ADMIN' || staff.role === 'STAFF');
 
   return (
