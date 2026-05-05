@@ -39,6 +39,7 @@ export function ThemeProvider({ children }) {
     setError(null);
     try {
       const s = await fetchSettings();
+      if (!s) throw new Error('Respuesta de settings vacía o inválida');
       const menuItems = normalizeMenuItems(s.menuItems);
       const heroSlides = Array.isArray(s.heroSlides)
         ? [...s.heroSlides, null, null, null].slice(0, 3).map((x) => (typeof x === 'string' && x.trim() ? x.trim() : null))
@@ -87,6 +88,7 @@ export function ThemeProvider({ children }) {
   const patchSettings = useCallback(
     async (patch) => {
       const updated = await updateSettings(patch);
+      if (!updated) throw new Error('Respuesta de settings vacía o inválida');
       const menuItems = normalizeMenuItems(updated.menuItems);
       const heroSlides = Array.isArray(updated.heroSlides)
         ? [...updated.heroSlides, null, null, null]

@@ -1,4 +1,5 @@
 import { customerApi, staffApi } from './client.js';
+import { asArray } from '../utils/apiNormalize.js';
 
 export async function createOrder(body) {
   const { data } = await customerApi.post('/orders', body);
@@ -7,12 +8,12 @@ export async function createOrder(body) {
 
 export async function fetchMyOrders() {
   const { data } = await customerApi.get('/orders/mine');
-  return data;
+  return asArray(data);
 }
 
 export async function fetchAllOrders() {
   const { data } = await staffApi.get('/orders');
-  return data;
+  return asArray(data);
 }
 
 export async function fetchOrderById(id) {

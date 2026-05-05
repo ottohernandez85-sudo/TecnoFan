@@ -1,8 +1,9 @@
 import { api, staffApi } from './client.js';
+import { asArray } from '../utils/apiNormalize.js';
 
 export async function fetchCategories() {
   const { data } = await api.get('/categories');
-  return data;
+  return asArray(data);
 }
 
 export async function createCategory(body) {

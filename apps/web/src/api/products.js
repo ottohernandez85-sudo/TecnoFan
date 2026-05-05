@@ -1,8 +1,9 @@
 import { api, staffApi } from './client.js';
+import { asArray } from '../utils/apiNormalize.js';
 
 export async function fetchProducts(params) {
   const { data } = await api.get('/products', { params });
-  return data;
+  return asArray(data);
 }
 
 export async function fetchProductBySlug(slug) {
