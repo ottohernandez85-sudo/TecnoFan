@@ -102,6 +102,10 @@ Orden recomendado: **Supabase → Render (API) → Vercel (web)**.
 
 ### Render (API Express)
 
+**Opción Blueprint (recomendada):** en [Render Dashboard](https://dashboard.render.com/) → **New** → **Blueprint**. Conecta el repo [TecnoFan](https://github.com/ottohernandez85-sudo/TecnoFan). Render usa el archivo [`render.yaml`](render.yaml) de la raíz: servicio Node con `rootDir: apps/api`, build con migraciones Prisma. Al aplicar el blueprint, te pedirá valores para `DATABASE_URL`, `JWT_SECRET` y `CLIENT_URL` (y opcional `CLIENT_URLS`).
+
+**Opción manual — Web Service:**
+
 1. **New → Web Service**, conecta el mismo repositorio que en Vercel.
 2. **Root Directory:** `apps/api`
 3. **Build command:** `npm install && npm run db:deploy`
@@ -126,6 +130,8 @@ Orden recomendado: **Supabase → Render (API) → Vercel (web)**.
 **Archivos subidos (logos, imágenes de productos, hero):** en Render el disco del contenedor es **efímero**. Las rutas bajo `uploads/` pueden perderse al redeploy o en reinicios. Para persistencia real conviene **Supabase Storage** (u otro almacenamiento de objetos); no está incluido en este flujo mínimo.
 
 ### Vercel (React + Vite)
+
+El front usa [`apps/web/vercel.json`](apps/web/vercel.json) para que las rutas de React Router funcionen al recargar (SPA).
 
 1. **Add New Project** e importa el repositorio.
 2. **Root Directory:** `apps/web`
